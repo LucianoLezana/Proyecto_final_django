@@ -1,0 +1,15 @@
+{%extends 'base_template.html'%}
+{%block title%}
+    <title>Crear post</title>
+{%endblock%}
+{%block content%}
+    <br>
+    Crea aqui tu post!!
+
+    <form method="Post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Post</button><br
+
+{%endblock%}
+    

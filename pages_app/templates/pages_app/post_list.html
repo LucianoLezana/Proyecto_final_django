@@ -1,0 +1,14 @@
+{%extends 'base_template.html'%}
+{%block content%}
+<div>
+    <h1>Aqui podras ver los post creados</h1>
+    <ul>
+        {%for post in object_list%}
+
+        <li><a href="{%url 'article' post.pk%}">{{post.title}}</a> - {{post.author}} - {{post.date}} <button><a href="{%url 'update_post' post.id%}">Editar</a></button></li>
+
+        {%endfor%}
+    </ul>
+    <h4>¿quieres crear un post?<a href="{%url 'add_post'%}">pulsa aqui</a></h4>
+</div>
+{%endblock%}

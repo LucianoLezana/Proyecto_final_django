@@ -1,3 +1,23 @@
+from distutils.command.upload import upload
 from django.db import models
+from django.contrib.auth.models import User
+from django.urls import reverse
 
-# Create your models here.
+'''El Model Blog
+Debe tener como mínimo los campos: título, subtítulo, cuerpo, autor, fecha y una imagen.
+'''
+
+
+class Post (models.Model):
+    title = models.CharField(max_length=220)
+    subtitle=models.CharField(max_length=220)
+    body=models.TextField()
+    author=models.ForeignKey(User, on_delete=models.CASCADE)
+    date=models.DateField()
+    #image=models.ImageField()
+
+    def __str__(self):
+        return f"{self.title} | fue creado por: {self.author} | {self.date}"
+
+    def get_absolute_url(self):
+        return reverse('article', args=(str(self.id)))
