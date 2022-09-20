@@ -1,8 +1,11 @@
 {%extends 'base_template.html'%}
 {%block content%}
-    <br>
-    <h1>Bienvenidos al inicio<h1>
-        <h4>¿Quieres ver los post?<a href="{%url 'home_post'%}">pulsa aqui</a></h4>
-
+<header class="masthead">
+     <div class="container">
+        <div class="masthead-subheading">Bienvenidos al inicio!</div>
+        <div class="masthead-heading text-uppercase">¿Quieres ver los post?</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="{%url 'home_post'%}">Click aquí</a>
+    </div>
+</header>      
 {%endblock%}
 

@@ -5,6 +5,8 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView, D
 def Home (request):
     return render(request, 'home.html')
 
+def About (request):
+    return render(request, 'about_us.html')
 
 class Page_view(ListView):
     model = Post
