@@ -1,7 +1,75 @@
 {%extends 'base_template.html'%}
+{%block styleblock%}
+<style>
+    body{
+
+        background-image: url('https://www.todofondos.net/wp-content/uploads/ultra-hd-4k-wood-wallpapers-hd-fondos-de-escritorio-3840x2400.-imagen-de-madera-scaled.jpg');
+    }
+    .form-control{
+        background-color: rgb(255, 255, 255);
+        padding: 5px;
+        width: 100%;
+        border: 1px solid #C4861A;
+        
+        
+    }
+    .form-post{
+        width: 1500px;
+        background: #474747;
+        padding: 30px;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 5px;
+        font-family: 'calibri';
+        color: white;
+        
+    }
+
+    .form-button{
+
+        width: 8%;
+        border: 1px solid #C4861A;
+        border-radius: 4px;
+        padding: 5px;
+        font-size: 20px;
+        font-family: 'calibri';
+        
+
+    }
+
+    .form-date{
+
+        width: auto;
+        border-radius: 5px;
+        border: 1px solid #C4861A;
+        padding: 3px;
+        margin-left: 10px;
+        font-size: 18px;
+        font-family: 'calibri';
+
+    }
+
+    .form-author{
+
+        width: auto;
+        border-radius: 5px;
+        border: 1px solid #C4861A;
+        padding: 3px;
+        margin-left: 10px;
+        font-size: 18px;
+        font-family: 'calibri';
+
+}
+
+</style>
+{%endblock%}
+{%block title%}   
+    <title>Editando post</title>
+{%endblock%}
 {%block content%}
 
-<form method="post">
+<form method="post" class='form-post'>
+    <h1>Editar post</h1>
     {% csrf_token %}
     {{form.as_p}}
     <button>Post</button>

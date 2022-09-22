@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from pages_app.models import Post
+from .forms import PostForm, PostFormUpdate
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 
 def Home (request):
@@ -15,8 +16,9 @@ class Page_view(ListView):
 
 class Page_create(CreateView):
     model = Post
+    form_class = PostForm
     template = 'post_form.html'
-    fields ='__all__'
+    #fields ='__all__'
 
 
 class Page_article(DetailView):
@@ -26,7 +28,8 @@ class Page_article(DetailView):
 
 class Page_update(UpdateView):
     model = Post
+    form_class = PostFormUpdate
     template = 'post_update.html'
-    fields = ['title', 'subtitle', 'body', 'date']
+    #fields = ['title', 'subtitle', 'body', 'date']
 
 

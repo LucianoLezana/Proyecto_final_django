@@ -15,20 +15,31 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="{% static 'pages_app/css/styles.css' %}" rel="stylesheet" />
+  {%block styleblock%}
+  {%endblock%}
 </head>
 <body id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-          <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+          {%comment%}<a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>{%endcomment%}
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               Menu
               <i class="fas fa-bars ms-1"></i>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                  <li class="nav-item"><a class="nav-link" href="">Inicio</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#posts">Mis posts</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{%url 'home'%}">Inicio</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{%url 'home_post'%}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mis posts
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{%url 'home_post'%}">Ver mas recientes</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{%url 'add_post'%}">Crear uno nuevo</a></li>
+                    </ul>
+                  </li>
                   <li class="nav-item"><a class="nav-link" href="#perfil">Mi Perfil</a></li>
                   <li class="nav-item"><a class="nav-link" href="#buscar">Buscar</a></li>
                   <li class="nav-item"><a class="nav-link" href="#about_us">Nosotros</a></li>
@@ -37,8 +48,8 @@
       </div>
   </nav>
   <!-- Masthead-->
-  {%block content%}
-  {%endblock%}
+{%block content%}
+{%endblock%}
   <!-- Services-->
   {% comment %} <section class="page-section" id="services">
       <div class="container">
