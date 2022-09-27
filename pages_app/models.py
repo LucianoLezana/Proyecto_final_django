@@ -2,6 +2,8 @@ from distutils.command.upload import upload
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from datetime import datetime
+from ckeditor.fields import RichTextField
 
 '''El Model Blog
 Debe tener como mínimo los campos: título, subtítulo, cuerpo, autor, fecha y una imagen.
@@ -11,9 +13,10 @@ Debe tener como mínimo los campos: título, subtítulo, cuerpo, autor, fecha y 
 class Post (models.Model):
     title = models.CharField(max_length=220)
     subtitle=models.CharField(max_length=220)
-    body=models.TextField()
+    body = RichTextField(blank=True, null=True)
+    #body=models.TextField()
     author=models.ForeignKey(User, on_delete=models.CASCADE)
-    date=models.DateField()
+    date=models.DateTimeField(default=datetime.now, blank=True)
     #image=models.ImageField()
 
     def __str__(self):

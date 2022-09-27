@@ -6,7 +6,7 @@ urlpatterns = [
     path('', views.Home, name="home"),
     path('about_us', views.About, name="about_us"),
     path('add_post/', Page_create.as_view(), name="add_post"),
-    path('home_post/', Page_view.as_view(), name="home_post"),
-    path('article/<int:pk>', Page_article.as_view(), name="article"),
+    path('pages/', Page_view.as_view(), name="home_post"),
+    path('pages/<int:pk>', Page_article.as_view(), name="article"),
     path('update_post/<int:pk>', Page_update.as_view(), name="update_post"),
 ]

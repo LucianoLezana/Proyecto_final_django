@@ -71,6 +71,7 @@
 <form method="post" class='form-post'>
     <h1>Editar post</h1>
     {% csrf_token %}
+    {{form.media}}
     {{form.as_p}}
     <button>Post</button>
 
