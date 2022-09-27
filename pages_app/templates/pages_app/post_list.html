@@ -51,10 +51,11 @@
 {%block content%}
 <div><br><br><br>
     <center><h1>Post creados por la comunidad</h1></center>
-        <ul class="conteiner">
+    
+    <ul class="conteiner">
         {%for post in object_list%}
 
-        <li class='list-post'><a class='title-post'href="{%url 'article' post.pk%}">{{post.title}}</a> - {{post.author}} - {{post.date}} <br><button class="list-button"><a href="{%url 'update_post' post.id%}">Editar</a></button></li>
+        <li class='list-post'><a class='title-post'href="{%url 'article' post.pk%}">{{post.title}}</a> - {{post.author}} - {{post.date}} <br><button class="list-button"><a href="{%url 'update_post' post.id%}">Editar</a></button><button class="list-button"><a href="{%url 'delete_post' post.id%}">Eliminar</a></button></li>
 
         {%endfor%}
         </ul>
