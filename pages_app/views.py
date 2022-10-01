@@ -58,4 +58,4 @@ def register(request):
             return render(request, "pages_app/home.html" , {"mensaje": "Usuario Creado: )"})
     else:
         form = UserRegisterForm()
-    return render(request, "pages_app/", {"form": form})
+    return render(request, "pages_app/register.html", {"form": form})
