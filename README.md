@@ -4,9 +4,9 @@
 **_Proyecto de Blog desarrollado como trabajo final del curso de Python de Coderhouse_**
 
 </p>
-<h3 align="left">Realizado por: </h3>
+<h3 align="center">Realizado por: </h3>
 
-<p align="left">
+<p align="center">
 
 - Luciano Benjamín Lezana
 
