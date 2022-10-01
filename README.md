@@ -1,7 +1,7 @@
 <h2 align="center">PROYECTO FINAL</h2>
 <h3 align="center">Proyecto de Blog desarrollado como trabajo final del curso de Python de Coderhouse</h3>
 
-<p align="left">
+<p align="center">
 Desarrollado por Luciano Benjamín Lezana y Lucía Roig Seigneur
 </p>
 
