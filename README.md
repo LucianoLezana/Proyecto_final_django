@@ -2,11 +2,7 @@
 <h3 align="center">Proyecto de Blog desarrollado como trabajo final del curso de Python de Coderhouse</h3>
 
 <p align="left">
-Desarrollado por:
-
-- Luciano Benjamín Lezana
-
-- Lucía Roig Seigneur
+Desarrollado por Luciano Benjamín Lezana y Lucía Roig Seigneur
 </p>
 
 <h3 align="center">Lenguajes y herramientas utilizadas:</h3>
