@@ -1,9 +1,12 @@
 from email.policy import default
+from pyexpat import model
 from django import forms
 from .models import Post
 from datetime import datetime
 from ckeditor.fields import RichTextField
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -31,3 +34,15 @@ class PostFormUpdate(forms.ModelForm):
             'date':forms.DateTimeInput(attrs={'class':'form-date'}),
                 
         }
+
+class userRegisterForm(UserCreationForm):
+    first_name = forms.CharField()
+    last_name = forms.CharField()
+    username = forms.CharField()
+    email = forms.EmailField()
+    password1: forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password2: forms.CharField(label='Repetir contraseña', widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['first_name','last_name','username','email','password1','password2']

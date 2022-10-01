@@ -1,66 +1,67 @@
-{%extends 'base_template.html'%}
-{%block styleblock%}
+{%extends 'base_template.html'%} {%block styleblock%}
 <style>
-    body{
+  body {
+    background-image: url("https://www.todofondos.net/wp-content/uploads/ultra-hd-4k-wood-wallpapers-hd-fondos-de-escritorio-3840x2400.-imagen-de-madera-scaled.jpg");
+  }
 
-        background-image: url('https://www.todofondos.net/wp-content/uploads/ultra-hd-4k-wood-wallpapers-hd-fondos-de-escritorio-3840x2400.-imagen-de-madera-scaled.jpg');
-    
-    }
+  .title-post {
+    font-family: "calibri";
+  }
 
-    .title-post{
+  .list-button {
+    width: auto;
+    border: 1px solid #ce7c30;
+    border-radius: 4px;
+    padding: auto;
+    font-size: auto;
+    font-family: "calibri";
+    background-color: rgb(109, 67, 27);
+  }
 
-        font-family: 'calibri';
+  .list-post {
+    background: rgb(71, 71, 71);
+    width: auto;
+    padding-bottom: 10px;
+    margin: 0px;
+    margin-top: 100px;
+    color: white;
+  }
 
-
-    }
-
-    .list-button{
-        
-        width: auto;
-        border: 1px solid #ce7c30;
-        border-radius: 4px;
-        padding: auto;
-        font-size: auto;
-        font-family: 'calibri';
-        background-color: rgb(109, 67, 27);
-        
-    }
-
-    .list-post{
-        background: rgb(71, 71, 71) ;
-        width: auto;
-        padding-bottom: 10px;
-        margin: 0px;
-        margin-top: 100px;
-        color: white;
-       
-
-
-    }
-
-    .conteiner{
-
-        width: 30%;
-        height: 30%;
-    }
-
-    
-
+  .conteiner {
+    width: 30%;
+    height: 30%;
+  }
 </style>
-{%endblock%}
-{%block content%}
-<div><br><br><br>
-    <center><h1>Post creados por la comunidad</h1></center>
-    
-    <ul class="conteiner">
-        {%for post in object_list%}
+{%endblock%} {%block content%}
+<div>
+  <br /><br /><br />
+  <center><h1>Post creados por la comunidad</h1></center>
 
-        <li class='list-post'><a class='title-post'href="{%url 'article' post.pk%}">{{post.title}}</a> - {{post.author}} - {{post.date}} <br><button class="list-button"><a href="{%url 'update_post' post.id%}">Editar</a></button><button class="list-button"><a href="{%url 'delete_post' post.id%}">Eliminar</a></button></li>
+  <ul class="conteiner">
+    {%for post in object_list%}
 
-        {%endfor%}
-        </ul>
-    
-    <br>
-    <h4>¿quieres crear un post?<a href="{%url 'add_post'%}">pulsa aqui</a></h4>
+    <li class="list-post">
+      <a class="title-post" href="{%url 'article' post.pk%}">{{post.title}}</a>
+      - {{post.author}} - {{post.date}} <br /><button class="list-button">
+        <a href="{%url 'update_post' post.id%}">Editar</a></button
+      ><button class="list-button">
+        <a href="{%url 'delete_post' post.id%}">Eliminar</a>
+      </button>
+    </li>
+
+    {%endfor%}
+  </ul>
+
+  <br />
+  <h4>¿quieres crear un post?<a href="{%url 'add_post'%}">pulsa aqui</a></h4>
 </div>
-{%endblock%}
+
+{% comment %}
+<div class="container">
+  <div class="masthead-subheading">Bienvenidos al inicio!</div>
+  <div class="masthead-heading text-uppercase">¿Quieres ver los post?</div>
+  <a class="btn btn-primary btn-xl text-uppercase" href="{%url 'add_post'%}"
+    >Click aquí</a
+  >
+</div>
+{% endcomment %} {%endblock%}
