@@ -1,5 +1,5 @@
 <h2 align="center">PROYECTO FINAL</h2>
-<p align="left">
+<p align="center">
 
 **_Proyecto de Blog desarrollado como trabajo final del curso de Python de Coderhouse_**
 
