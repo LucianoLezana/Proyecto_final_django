@@ -50,12 +50,17 @@ def delete_post(request, pk):
 
 
 def register(request):
+    mensaje = ''
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
 
         if form.is_valid():
             form.save()
-            return render(request, "pages_app/home.html" , {"mensaje": "Usuario Creado: )"})
-    else:
-        form = UserRegisterForm()
-    return render(request, "pages_app/register.html", {"form": form})
+            return render(request, "pages_app/home.html" , {"mensaje": "Usuario Creado: "})
+        else:
+            mensaje = 'Error en datos ingresados'
+            form = UserRegisterForm()
+            context = {"form": form}
+    if mensaje:
+        context["mensaje"] = mensaje
+    return render(request, "pages_app/register.html", context)
