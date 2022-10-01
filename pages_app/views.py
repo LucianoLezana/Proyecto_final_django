@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from pages_app.models import Post
-from .forms import PostForm, PostFormUpdate
+from .forms import PostForm, PostFormUpdate, UserRegisterForm
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse
 
@@ -49,3 +49,13 @@ def delete_post(request, pk):
     return redirect(back_url)
 
 
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return render(request, "pages_app/home.html" , {"mensaje": "Usuario Creado: )"})
+    else:
+        form = UserRegisterForm()
+    return render(request, "pages_app/", {"form": form})

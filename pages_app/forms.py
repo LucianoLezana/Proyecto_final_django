@@ -36,10 +36,6 @@ class PostFormUpdate(forms.ModelForm):
         }
 
 class userRegisterForm(UserCreationForm):
-    first_name = forms.CharField()
-    last_name = forms.CharField()
-    username = forms.CharField()
-    email = forms.EmailField()
     password1: forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2: forms.CharField(label='Repetir contraseña', widget=forms.PasswordInput)
 
