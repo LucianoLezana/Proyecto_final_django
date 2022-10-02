@@ -31,6 +31,7 @@ python manage.py createsuperuser
 
 ```
 127.0.0.1:8000/admin
+```
 
 <h3 align="center">Lenguajes y herramientas utilizadas:</h3>
  <p align="center">
@@ -47,4 +48,3 @@ python manage.py createsuperuser
 <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank" rel="noreferrer">
 <img src="https://brandlogos.net/wp-content/uploads/2021/09/bootstrap-logo.png" alt="bootstrap" width="40" height="40"/> </a>
  </p>
-```
