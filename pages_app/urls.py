@@ -10,5 +10,7 @@ urlpatterns = [
     path('pages/<int:pk>', Page_article.as_view(), name="article"),
     path('update_post/<int:pk>', Page_update.as_view(), name="update_post"),
     path('delete_post/<int:pk>', views.delete_post, name="delete_post"),
+    path('login/', views.login_request, name="login"),
     path('register/', views.register, name="register"),
+    path('logout/', views.CustomLogoutView.as_view(), name = 'logout'),
 ]

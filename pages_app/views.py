@@ -1,3 +1,4 @@
+from operator import is_
 from django.shortcuts import render, redirect
 from pages_app.models import Post
 from .forms import PostForm, PostFormUpdate, UserRegisterForm
@@ -8,6 +9,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LogoutView
+
 
 
 def Home (request):
@@ -59,8 +62,30 @@ def register(request):
             return render(request, "pages_app/home.html" , {"mensaje": "Usuario Creado: "})
         else:
             mensaje = 'Error en datos ingresados'
-            form = UserRegisterForm()
-            context = {"form": form}
-    if mensaje:
-        context["mensaje"] = mensaje
-    return render(request, "pages_app/register.html", context)
+    form = UserRegisterForm()
+    context = {"form": form, "mensaje": mensaje}
+    
+    return render(request, "pages_app/register.html", context=context)
+
+def login_request(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data= request.POST)
+
+        if form.is_valid():
+            usuario = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=usuario, password=password)
+
+            if user:
+                login(request, user)
+                return render(request, "pages_app/home.html" , {"mensaje":f"Bienvenido {usuario}"})
+            else:
+                 return render(request, "pages_app/login.html" , {"mensaje": "Error en datos ingresados"})
+        else:
+            return render(request, "pages_app/login.html" , {"mensaje": "Error en datos ingresados"})
+    form = AuthenticationForm()
+    return render(request, "pages_app/login.html", {'form':form})
+
+
+class CustomLogoutView(LogoutView):
+    template_name = 'pages_app/logout.html'
