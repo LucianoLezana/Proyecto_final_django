@@ -17,7 +17,7 @@ class Post (models.Model):
     #body=models.TextField()
     author=models.ForeignKey(User, on_delete=models.CASCADE)
     date=models.DateTimeField(default=datetime.now, blank=True)
-    #image=models.ImageField()
+    image=models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         return f"{self.title} | fue creado por: {self.author} | {self.date}"

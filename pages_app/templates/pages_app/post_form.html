@@ -1,4 +1,4 @@
-{%extends 'base_template.html'%} {%block styleblock%}
+{%extends 'pages_app/base_template.html'%} {%block styleblock%}
 <style>
   body {
     background-image: url("https://www.todofondos.net/wp-content/uploads/ultra-hd-4k-wood-wallpapers-hd-fondos-de-escritorio-3840x2400.-imagen-de-madera-scaled.jpg");
@@ -52,7 +52,7 @@
 {%endblock%} {%block title%}
 <title>Crear post</title>
 {%endblock%} {%block content%}
-<form method="Post" class="form-post">
+<form method="Post" enctype="multipart/form-data" class="form-post">
   <center><h1>Crea tu post</h1></center>
   {% csrf_token %} {{form.media}} {{form.as_p}}
   <center><button class="form-button">Publicar</button></center>

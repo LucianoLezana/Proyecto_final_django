@@ -14,10 +14,10 @@ from django.contrib.auth.views import LogoutView
 
 
 def Home (request):
-    return render(request, 'home.html')
+    return render(request, 'pages_app/home.html')
 
 def About (request):
-    return render(request, 'about_us.html')
+    return render(request, 'pages_app/about_us.html')
 
 class Page_view(ListView):
     model = Post

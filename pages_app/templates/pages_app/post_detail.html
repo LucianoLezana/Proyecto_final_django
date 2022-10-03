@@ -1,13 +1,17 @@
-{%extends 'base_template.html'%}
+{%extends 'pages_app/base_template.html'%}
 {%block content%}
 <br>
 <br>
 <br>
     <h1>{{post.title}}</h1>
+    <h4>{{post.subtitle}}</h4>
     <small>Hecho por: {{post.author.first_name}} {{post.author.last_name}}</small>
     <br>
     <hr>
-    
+    {%if post.image%}
+        <img src="{{post.image.url}}"> 
+    {%endif%}
+   <br><br>
     {{post.body | safe}}
 
     <br>

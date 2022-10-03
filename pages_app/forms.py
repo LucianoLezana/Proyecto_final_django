@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'subtitle', 'body', 'date', 'author')
+        fields = ('title', 'subtitle', 'body', 'date', 'author', 'image')
         widgets = {
             'author':forms.Select(attrs={'class': 'form-author'}),
             'title':forms.TextInput(attrs={'class':'form-control'}),
