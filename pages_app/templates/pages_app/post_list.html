@@ -42,8 +42,8 @@
 
     <li class="list-post">
       <a class="title-post" href="{%url 'article' post.pk%}">{{post.title}}</a>
-      - {{post.author}} - {{post.date}} <br /><button class="list-button">
-        <a href="{%url 'update_post' post.id%}">Editar</a></button
+      - {{post.author}} - {{post.date}} <br /><button class="list-button"> 
+       <a href="{%url 'update_post' post.id%}">Editar</a></button
       ><button class="list-button">
         <a href="{%url 'delete_post' post.id%}">Eliminar</a>
       </button>

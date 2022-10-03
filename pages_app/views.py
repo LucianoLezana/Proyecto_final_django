@@ -29,7 +29,7 @@ class Page_create(LoginRequiredMixin, CreateView):
     template = 'post_form.html'
     #fields ='__all__'
 
-class Page_article(LoginRequiredMixin, DetailView):
+class Page_article(DetailView):
     model = Post
     template = 'post_detail.html'
 
@@ -49,6 +49,7 @@ def delete_post(request, pk):
     return redirect(back_url)
 
 def register(request):
+    form_class = UserRegisterForm
     mensaje = ''
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)

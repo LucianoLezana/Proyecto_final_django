@@ -1,5 +1,5 @@
 {%extends 'pages_app/base_template.html'%} {%block content%}
-<div class="container">
+<div class="form-group">
   <form method="post" class="d-grid gap-2 col-3 mx-auto">
     {%csrf_token%} {{form.as_p}}
     <input type="submit" value="Registrarse" />
