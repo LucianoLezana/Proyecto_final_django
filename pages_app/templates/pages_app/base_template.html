@@ -90,13 +90,22 @@
           <li class="nav-item">
             <a class="nav-link" href="{%url 'about_us'%}">Nosotros</a>
           </li>
-          <li class="nav-item">
+         
             {% if user.is_authenticated %}
-            <a class="nav-link" href="{%url 'logout'%}">Cerrar Sesión</a>
-            {%else %}
-            <a class="nav-link" href="{%url 'register'%}">Registrarse</a>
-            {%endif%}
-          </li>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Hola,
+                  {{ user.username }}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Editar mis datos</a></li>
+                  <li><a class="dropdown-item" href="{% url 'logout' %}"><strong>Cerrar Sesión</strong></a></li>
+                </ul>
+              </div>
+            {% else %}
+            <a class="btn btn-primary" href="{% url 'register' %}">REGISTRARSE</a>
+            {% endif %}
+        </div>
+          
         </ul>
       </div>
     </div>

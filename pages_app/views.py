@@ -1,15 +1,16 @@
 from operator import is_
 from django.shortcuts import render, redirect
 from pages_app.models import Post
-from .forms import PostForm, PostFormUpdate, UserRegisterForm
+from .forms import PostForm, PostFormUpdate, UserRegisterForm, UserUpdateForm
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LogoutView
+from django.contrib.auth.models import User
 
 
 
@@ -99,3 +100,13 @@ def login_request(request):
 
 class CustomLogoutView(LogoutView):
     template_name = 'pages_app/logout.html'
+    next_page = reverse_lazy('home')
+
+class ProfileUpdateView(LoginRequiredMixin,UpdateView):
+    model = User
+    form_class = UserUpdateForm
+    success_url = reverse_lazy('home')
+    template_name = ('pages_app/update_profile.html')
+
+    def get_object(self, queryset=None):
+        return self.request.user

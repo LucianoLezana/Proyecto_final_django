@@ -8,6 +8,7 @@ urlpatterns = [
     path('login/', views.login_request, name="login"),
     path('register/', views.register, name="register"),
     path('logout/', views.CustomLogoutView.as_view(), name = 'logout'),
+    path('edit-profile/', views.ProfileUpdateView.as_view(), name = 'edit_profile'),
     #-----------URL DE LOS POST-----------
     path('pages/', Page_view.as_view(), name="home_post"),
     path('pages/<int:pk>', Page_article.as_view(), name="article"),
