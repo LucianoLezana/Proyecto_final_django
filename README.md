@@ -4,6 +4,11 @@
 <p align="center">
 Desarrollado por Luciano Benjamín Lezana y Lucía Roig Seigneur
 </p>
+<h3>Organizacion del trabajo:</h3>
+<p>Utilizamos una pagina llamada trello donde fuimos poniendo que podria hacer cada uno para poder llevar a cabo el proyecto.
+<b>Luciano Benjamín Lezana<b> se encargo de la parte de las paginas, basicamente crear el post, editarlo y poder eliminarlo, con sus respectivas views, html y url. Una vez terminado eso mejoro los estilos de los post y realizando cambios en el nav, home, plantillas, etc.
+<b>Lucia Roig Seigneur<b> se encargo de realizar todo lo relacionado con el login, logout y register como ser las views, html y url para que la pagina tenga un firme funiconamiento, realizo el readme del proyecto junto con el about y dando estilo a todas las paginas junto con bootstrap.
+</p>
 
 <h3>Instrucciones instalar proyecto en local</h3>
 <p>
