@@ -3,6 +3,9 @@
 
 <p align="center">
 Desarrollado por Luciano Benjamín Lezana y Lucía Roig Seigneur
+
+[![ScreenShot](https://i.ibb.co/7NB7c2P/caratula-video.png)](https://www.loom.com/share/2aa31e3d1aee4b878689cce89d3d1fe8)
+
 </p>
 <h3>Organizacion del trabajo:</h3>
 <p>Utilizamos una pagina llamada trello donde fuimos poniendo que podria hacer cada uno para poder llevar a cabo el proyecto.
