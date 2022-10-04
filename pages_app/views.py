@@ -67,7 +67,7 @@ def register(request):
 
         if form.is_valid():
             form.save()
-            return render(request, "pages_app/home.html" , {"mensaje": "Usuario Creado: "})
+            return render(request, "pages_app/home.html" , {"mensaje": "Creaste tu Usuario"})
         else:
             mensaje = 'Error en datos ingresados'
     form = UserRegisterForm()
