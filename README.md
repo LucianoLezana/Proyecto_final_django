@@ -4,9 +4,10 @@
 <p align="center">
 Desarrollado por Luciano Benjamín Lezana y Lucía Roig Seigneur
 
-[![ScreenShot](https://i.ibb.co/7NB7c2P/caratula-video.png)](./pages_app/static/pages_app/assets/img/Blog-Trabajo-Final-de-Python-4-October-2022.gif)
+[![ScreenShot](https://i.ibb.co/7NB7c2P/caratula-video.png)]
+(./pages_app/static/pages_app/assets/img/Blog-Trabajo-Final-de-Python-4-October-2022.gif)
 
-[link al video] (https://www.loom.com/share/2aa31e3d1aee4b878689cce89d3d1fe8)
+link al video de la navegación>>> (https://www.loom.com/share/2aa31e3d1aee4b878689cce89d3d1fe8)
 
 </p>
 <h3>Organizacion del trabajo:</h3>
