@@ -75,6 +75,7 @@ def register(request):
     return render(request, "pages_app/register.html", context=context)
 
 def login_request(request):
+    next_url = request.GET.get('next')
     if request.method == 'POST':
         form = AuthenticationForm(request, data= request.POST)
 
@@ -85,6 +86,8 @@ def login_request(request):
 
             if user:
                 login(request, user)
+                if next_url:
+                    return redirect(next_url)
                 return render(request, "pages_app/home.html" , {"mensaje":f"Bienvenido {usuario}"})
             else:
                  return render(request, "pages_app/login.html" , {"mensaje": "Error en datos ingresados"})

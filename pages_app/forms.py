@@ -48,8 +48,7 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name','last_name','username','email','password1','password2']
-        widgets = {
-            
+        widgets = {            
             'first_name':forms.TextInput(attrs={'class':'form-control'}),
             'last_name':forms.TextInput(attrs={'class':'form-control'}),
             'username':forms.TextInput(attrs={'class':'form-control'}),
