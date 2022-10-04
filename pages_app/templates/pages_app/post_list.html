@@ -36,24 +36,33 @@
 <div>
   <br /><br /><br />
   <center><h1>Post creados por la comunidad</h1></center>
-
+  <hr>
+<center>
   <ul class="conteiner">
     {%for post in object_list%}
+    
 
     <li class="list-post">
-      <a class="title-post" href="{%url 'article' post.pk%}">{{post.title}}</a>
-      - {{post.author}} - {{post.date}} <br /><button class="list-button"> 
-       <a href="{%url 'update_post' post.id%}">Editar</a></button
-      ><button class="list-button">
-        <a href="{%url 'delete_post' post.id%}">Eliminar</a>
-      </button>
+      
+        {%if post.image%}
+        <img src="{{post.image.url}}" width="100px"> 
+        {%endif%}
+      <a class="title-post" href="{%url 'article' post.id%}">{{post.title}}</a>
+      {{post.author}} - {{post.date}} <br /> 
+        {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+       <button class="list-button"><a href="{%url 'update_post' post.id%}">Editar</a></button>
+      <button class="list-button"><a href="{%url 'delete_post' post.id%}">Eliminar</a></button>
     </li>
 
+        {%endif%}
+        {%endif%}
+        {% empty %}
+        <h1>Todavia no se a creado ningun post...<h1></h1>
     {%endfor%}
-  </ul>
-
-  <br />
-  <h4>¿quieres crear un post?<a href="{%url 'add_post'%}">pulsa aqui</a></h4>
+  </ul></center> 
+<h4>¿deseas crear uno?<a href="{%url 'add_post'%}">pulsa aqui</a></h4>
+  
 </div>
 
 {% comment %}

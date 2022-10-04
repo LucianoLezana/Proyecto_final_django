@@ -27,6 +27,7 @@ class Page_create(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     template = 'post_form.html'
+    context = {'mensaje':'creado'}
     #fields ='__all__'
 
 class Page_article(DetailView):
