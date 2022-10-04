@@ -1,4 +1,7 @@
 from distutils.command.upload import upload
+from email import contentmanager
+from pyexpat import model
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -24,3 +27,4 @@ class Post (models.Model):
 
     def get_absolute_url(self):
         return reverse('article', args=(str(self.id)))
+

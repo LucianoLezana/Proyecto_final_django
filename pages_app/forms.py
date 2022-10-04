@@ -4,9 +4,11 @@ from django import forms
 from .models import Post
 from datetime import datetime
 from ckeditor.fields import RichTextField
-
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+
+
+#---------------------- MODELFORM PARA LOS POST ------------------------
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -34,6 +36,10 @@ class PostFormUpdate(forms.ModelForm):
             'date':forms.DateTimeInput(attrs={'class':'form-date'}),
                 
         }
+
+
+#----------------------------------------------------------------------
+
 
 class UserRegisterForm(UserCreationForm):
     password1: forms.CharField(label='Contraseña', widget=forms.PasswordInput)

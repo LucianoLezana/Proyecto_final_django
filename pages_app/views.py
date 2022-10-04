@@ -19,9 +19,13 @@ def Home (request):
 def About (request):
     return render(request, 'pages_app/about_us.html')
 
+    #---------------- CLASS-BASED VIEWS PAGES -------------------
+
+
 class Page_view(ListView):
     model = Post
     template = 'post_list.html'
+
 
 class Page_create(LoginRequiredMixin, CreateView):
     model = Post
@@ -30,15 +34,20 @@ class Page_create(LoginRequiredMixin, CreateView):
     context = {'mensaje':'creado'}
     #fields ='__all__'
 
+
 class Page_article(DetailView):
     model = Post
     template = 'post_detail.html'
+
 
 class Page_update(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostFormUpdate
     template = 'post_update.html'
     #fields = ['title', 'subtitle', 'body', 'date']
+
+
+    #----------------------------------------------------------
 
 @login_required
 def delete_post(request, pk):

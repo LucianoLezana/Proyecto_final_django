@@ -58,12 +58,15 @@
         {%endif%}
         {%endif%}
         {% empty %}
-        <h1>Todavia no se a creado ningun post...<h1></h1>
+        <h1>Todavia no se a creado ningun post...</h1>
     {%endfor%}
-  </ul></center> 
-<h4>¿deseas crear uno?<a href="{%url 'add_post'%}">pulsa aqui</a></h4>
-  
+  </ul>
+</center>    
 </div>
+
+<hr>
+
+<h4>¿deseas crear uno?<a href="{%url 'add_post'%}">pulsa aqui</a></h4>
 
 {% comment %}
 <div class="container">
@@ -73,4 +76,6 @@
     >Click aquí</a
   >
 </div>
-{% endcomment %} {%endblock%}
+{% endcomment %} 
+
+{%endblock%}
